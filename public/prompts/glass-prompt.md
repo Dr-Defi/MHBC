@@ -27,7 +27,7 @@ navigateToSection(payload: NavigationPayload): void
 
 <!-- TEMPLATE-SCHEMAS-START -->
 
-## ---TEMPLATES--- (30)
+## ---TEMPLATES--- (31)
 
 ### Accordion
 GENERIC
@@ -207,6 +207,12 @@ RICH GENERIC
 Apple-style solid color cards for Mobeus
 ```json
 {"cards"?: [{"question": "string", "subtext"?: "string", "icon"?: "string", "imageUrl"?: "string", "actionPhrase": "string", "isAccent"?: false, "accentColor"?: {}}]}
+```
+
+### TeamGrid
+RICH GENERIC
+```json
+{"icon"?: "string", "badge"?: "string", "headline"?: "string", "subtitle"?: "string", "members": [{"name": "string", "role"?: "string", "imageUrl"?: "string", "imagePrompt"?: "string", "bio"?: "string", "linkedinUrl"?: "string", "email"?: "string", "actionPhrase"?: "string"}], "columns"?: 3, "ctaLabel"?: "string", "ctaActionPhrase"?: "string"}
 ```
 
 <!-- TEMPLATE-SCHEMAS-END -->

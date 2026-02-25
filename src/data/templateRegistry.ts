@@ -31,6 +31,7 @@ export const TEMPLATE_REGISTRY: Record<string, React.FC<any>> = {
     Form: lazy(() => import("@/components/templates/Form").then(m => ({ default: m.Form }))),
     PartyConfirmation: lazy(() => import("@/components/templates/PartyConfirmation").then(m => ({ default: m.PartyConfirmation }))),
     Trio: lazy(() => import("@/components/templates/Trio").then(m => ({ default: m.Trio }))),
+    TeamGrid: lazy(() => import("@/components/templates/TeamGrid").then(m => ({ default: m.TeamGrid }))),
 
     // ═══════════════════════════════════════════════════════════════════════
     // COMPARISON & DISPLAY (4)
