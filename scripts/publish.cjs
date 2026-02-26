@@ -43,10 +43,17 @@ async function publish() {
     console.log(`\n API: ${apiUrl}`);
     console.log("\n Publishing to prompt-tool...");
 
+    // Publish API key required — generate from admin panel → API Keys
+    const publishApiKey = process.env.PUBLISH_API_KEY;
+    if (!publishApiKey) {
+      throw new Error("PUBLISH_API_KEY environment variable is required. Generate a publish key from the admin panel.");
+    }
+
     const response = await fetch(`${apiUrl}/api/publish/from-files`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "X-API-Key": publishApiKey,
       },
       body: JSON.stringify({
         tenantId,

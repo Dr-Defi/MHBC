@@ -112,6 +112,7 @@
   <script>
     window.UIFRAMEWORK_AUTO_INIT = true;
     window.UIFrameworkPreInitConfig = {
+      apiKey: 'REPLACE_WITH_FRONTEND_API_KEY', // Generate from admin panel → API Keys
       autoConnect: false,
       autoConnectAvatar: false,
       autoConnectVoice: false,
@@ -573,7 +574,7 @@
     })();
   </script>
   <!-- UI Framework bundle (local during dev, hosted in production) -->
-  <script type="module" src="https://telecdn.s3.us-east-2.amazonaws.com/js/ui-framework.js"></script>
+  <script type="module" src="https://telecdn.s3.us-east-2.amazonaws.com/js/bn-ui-framework.js"></script>
 </head>
 
 <body>
