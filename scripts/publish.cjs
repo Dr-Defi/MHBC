@@ -4,7 +4,7 @@ const path = require("path");
 async function publish() {
   try {
     // Put your tenant ID for this project here, or pass TENANT_ID env var
-    const tenantId = process.env.TENANT_ID || "4060";
+    const tenantId = process.env.TENANT_ID || "3961";
     console.log("📋 Using tenant ID: " + tenantId);
 
     // Read whitelisted files from public/prompts/
@@ -39,12 +39,12 @@ async function publish() {
     }
 
     // POST to API
-    const apiUrl = "https://prompt.mobeus.ai";
+    const apiUrl = "https://bn-prompt.mobeus.ai";
     console.log(`\n API: ${apiUrl}`);
     console.log("\n Publishing to prompt-tool...");
 
     // Publish API key required — generate from admin panel → API Keys
-    const publishApiKey = process.env.PUBLISH_API_KEY;
+    const publishApiKey = "mbs_pub_f9ef20128a25187579d3d0763e255b4ec04d219794fc364bbfbce72e0454810c";
     if (!publishApiKey) {
       throw new Error("PUBLISH_API_KEY environment variable is required. Generate a publish key from the admin panel.");
     }
