@@ -413,7 +413,56 @@ RICH GENERIC
 
 ---
 
+
+### Shot 4: "Book a service / Collect Lead and Payment"
+
+**User:** "I'd like to book Tier I" / "How do I pay?" / "I'm ready to proceed"
+
+**Tele:** "Wonderful. Let's get your details and securely process your payment to confirm your booking."
+
+**Call:**
+```json
+{
+  "badge": "BOOKING",
+  "title": "Membership Booking",
+  "generativeSubsections": [
+    {
+      "id": "booking-form",
+      "templateId": "Form",
+      "props": {
+        "headline": "Secure Your Membership",
+        "subheadline": "Please provide your details",
+        "fields": [
+          { "name": "fullName", "label": "Full Name", "type": "text", "required": true },
+          { "name": "email", "label": "Email", "type": "email", "required": true },
+          { "name": "phone", "label": "Phone Number", "type": "tel", "required": true },
+          { "name": "cardNumber", "label": "Card Number", "type": "text", "required": true },
+          { "name": "expiry", "label": "Exp Date (MM/YY)", "type": "text", "required": true }
+        ],
+        "submitLabel": "Complete Booking",
+        "submitActionPhrase": "submit my booking",
+        "infoLabel": "Secure Processing",
+        "infoItems": [
+          { "text": "256-bit encryption" },
+          { "text": "Cancel anytime" }
+        ]
+      }
+    },
+    {
+      "id": "booking-banner",
+      "templateId": "Banner",
+      "props": {
+        "headline": "Welcome to the Club",
+        "description": "Your dedicated butler is standing by.",
+        "variant": "gradient"
+      }
+    }
+  ]
+}
+```
+
 ## 🚀 PATTERN
+
 
 **Every response uses exactly 2 templates.**
 

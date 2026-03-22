@@ -1,7 +1,7 @@
 import { useState, useLayoutEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import { default as moebeusLogo } from "@/assets/mobeus-logo.png";
+
 import { handleAcknowledgment } from "@/utils/acknowledgmentHelpers";
 import { sendToTele } from "@/utils/teleInteraction";
 import { useSound } from "@/hooks/useSound";
@@ -92,12 +92,7 @@ const Navigation = ({ activeSection, isChatGlassOpen, onSectionChange }: Navigat
             <div className="flex items-center gap-6">
               {/* Logo */}
               <div className="no-lightboard flex items-center">
-                <img
-                  src={moebeusLogo}
-                  alt="Mobeus"
-                  className="no-lightboard h-[27px] w-auto object-contain max-w-none"
-                  style={{ aspectRatio: 'auto' }}
-                />
+                <span className="text-xl font-bold tracking-tight text-mist whitespace-nowrap">HOME BUTLER CLUB</span>
               </div>
 
               {/* Desktop Navigation - VISIBLE ON DARK BACKGROUND */}

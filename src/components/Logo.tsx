@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { default as mobeusLogo } from '@/assets/mobeus-logo.png';
+
 
 interface LogoProps {
     onClick?: () => void;
@@ -24,12 +24,7 @@ export const Logo: React.FC<LogoProps> = ({ onClick, className = '' }) => {
             className={`no-lightboard flex items-center hover:opacity-80 transition-opacity ${className}`}
             disabled={!onClick}
         >
-            <img
-                src={mobeusLogo}
-                alt="Mobeus"
-                className="no-lightboard h-[27px] w-auto object-contain max-w-none transition-all duration-300 ease-in-out"
-                style={{ aspectRatio: 'auto' }}
-            />
+            <span className="text-xl font-bold tracking-tight text-mist whitespace-nowrap">HOME BUTLER CLUB</span>
         </button>
     );
 };

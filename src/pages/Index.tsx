@@ -29,7 +29,7 @@ import { OnboardingTransition } from "@/components/OnboardingTransition";
 import { Logo } from "@/components/Logo";
 
 
-// Welcome section — MOBEUS UNIVERSITY: The Screen Finally Cares
+// Welcome section — HOME BUTLER CLUB: The Screen Finally Cares
 const WELCOME_VARIANTS = [
   {
     badge: "HOME BUTLER CLUB",

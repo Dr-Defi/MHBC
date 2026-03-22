@@ -195,12 +195,12 @@ button,
     --color-onyx: #000000;
 
     /* Accent Colors - Refined for harmony */
-    --color-primary: #D4AF37;
-    /* Classic Gold - luxurious on dark */
-    --color-secondary: #FDE047;
-    /* Bright Gold - complements warm woods */
-    --color-accent: #FFFBEB;
-    /* Warm White - elegant accent */
+    --color-primary: #2C3345;
+    /* Dark Slate Blue - from exact website */
+    --color-secondary: #ACACAC;
+    /* Light Gray - from exact website */
+    --color-accent: #8C8C8C;
+    /* Medium Gray - elegant accent */
     --color-success: #34D399;
     /* Emerald - success states */
     --color-warning: #FBBF24;

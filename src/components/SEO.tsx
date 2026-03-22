@@ -11,12 +11,12 @@ interface SEOProps {
 }
 
 export const SEO = ({
-  title = 'Mobeus | The Assisted Future',
+  title = 'Home Butler Club',
   description = 'Machines helping mankind. A population of helpful teles giving humanity space for life. The screen finally cares.',
   image = '/og-image.png',
   url = '/',
   type = 'website',
-  keywords = ['Mobeus', 'Tele', 'The Assisted Future', 'Space for Life', 'Conversational Labor', 'The Screen Finally Cares'],
+  keywords = ['Home Butler Club', 'Tele', 'Elevated Home Living', 'Space for Life', 'Conversational Labor', 'The Screen Finally Cares'],
   structuredData,
 }: SEOProps) => {
   useEffect(() => {
@@ -47,7 +47,7 @@ export const SEO = ({
     updateMetaTag('og:image', image, true);
     updateMetaTag('og:url', url, true);
     updateMetaTag('og:type', type, true);
-    updateMetaTag('og:site_name', 'Mobeus', true);
+    updateMetaTag('og:site_name', 'Home Butler Club', true);
 
     // Twitter Card tags
     updateMetaTag('twitter:card', 'summary_large_image');
@@ -72,41 +72,41 @@ export const SEO = ({
   return null;
 };
 
-// Pre-configured SEO for sections - Mobeus Platform
+// Pre-configured SEO for sections - Home Butler Club Platform
 export const sectionSEO = {
   welcome: {
-    title: 'Mobeus | The Assisted Future',
-    description: 'Experience The Assisted Future. Conversational labor that helps you. The screen finally cares.',
-    keywords: ['Mobeus', 'The Assisted Future', 'Tele', 'Space for Life', 'The Screen Finally Cares'],
+    title: 'Home Butler Club',
+    description: 'Experience Elevated Home Living. Conversational labor that helps you. The screen finally cares.',
+    keywords: ['Home Butler Club', 'Elevated Home Living', 'Tele', 'Space for Life', 'The Screen Finally Cares'],
   },
 
   platform: {
-    title: 'The Mobeus Platform | Operating System for Conversational Labor',
+    title: 'The Home Butler Club Platform | Operating System for Conversational Labor',
     description: 'Built on six agnostic foundations. Model, cloud, device, channel, language, and use case agnostic.',
-    keywords: ['Mobeus Platform', 'Conversational Labor', 'Tele', 'Infrastructure'],
+    keywords: ['Home Butler Club Platform', 'Conversational Labor', 'Tele', 'Infrastructure'],
   },
 
   teles: {
     title: 'The Tele Population | Helpful Conversational Workers',
-    description: 'A population of helpful teles — conversational workers accelerating The Assisted Future.',
+    description: 'A population of helpful teles — conversational workers accelerating Elevated Home Living.',
     keywords: ['Tele', 'Tele Population', 'Conversational Workers', 'The Screen Finally Cares'],
   },
 
   future: {
-    title: 'The Assisted Future | Space for Life',
+    title: 'Elevated Home Living | Space for Life',
     description: 'A world where machines truly help mankind, giving humanity space for life. Time for family, creativity, and joy.',
-    keywords: ['The Assisted Future', 'Space for Life', 'Machines Helping Mankind'],
+    keywords: ['Elevated Home Living', 'Space for Life', 'Machines Helping Mankind'],
   },
 
   launch: {
-    title: 'Population Party | The Assisted Future Arrives',
+    title: 'Population Party | Elevated Home Living Arrives',
     description: 'March 15, 2026 - Join the Population Party. Music, dancing, celebration. RSVP now.',
-    keywords: ['Population Party', 'The Assisted Future', 'Mobeus', 'March 2026', 'Celebration'],
+    keywords: ['Population Party', 'Elevated Home Living', 'Home Butler Club', 'March 2026', 'Celebration'],
   },
 
   home: {
-    title: 'Mobeus | The Assisted Future',
-    description: 'Experience The Assisted Future.',
-    keywords: ['Mobeus', 'The Assisted Future', 'Tele', 'Space for Life'],
+    title: 'Home Butler Club',
+    description: 'Experience Elevated Home Living.',
+    keywords: ['Home Butler Club', 'Elevated Home Living', 'Tele', 'Space for Life'],
   },
 };
