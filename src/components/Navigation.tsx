@@ -45,24 +45,24 @@ const Navigation = ({ activeSection, isChatGlassOpen, onSectionChange }: Navigat
     isHighlighted?: boolean;
   }> = [
       {
+        id: 'services',
+        label: 'SERVICES',
+        teleQuery: 'tell me about your services'
+      },
+      {
+        id: 'pricing',
+        label: 'PRICING',
+        teleQuery: 'what are the pricing tiers'
+      },
+      {
         id: 'how-it-works',
         label: 'HOW IT WORKS',
-        teleQuery: 'show me how it works'
+        teleQuery: 'how does it work'
       },
       {
-        id: 'what-we-do',
-        label: 'WHAT WE DO',
-        teleQuery: 'show me what you do'
-      },
-      {
-        id: 'about',
-        label: 'ABOUT',
-        teleQuery: 'show me what mobeus is'
-      },
-      {
-        id: 'get-started',
-        label: 'LAUNCH EVENT',
-        teleQuery: 'show me launch event registration',
+        id: 'join',
+        label: 'APPLY NOW',
+        teleQuery: 'sign me up',
         isHighlighted: true
       }
     ];

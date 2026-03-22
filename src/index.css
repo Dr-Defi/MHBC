@@ -195,12 +195,12 @@ button,
     --color-onyx: #000000;
 
     /* Accent Colors - Refined for harmony */
-    --color-primary: #A78BFA;
-    /* Soft violet - accessible on dark */
-    --color-secondary: #67E8F9;
-    /* Cyan - complements hero colors */
-    --color-accent: #F472B6;
-    /* Soft pink - warm accent */
+    --color-primary: #D4AF37;
+    /* Classic Gold - luxurious on dark */
+    --color-secondary: #FDE047;
+    /* Bright Gold - complements warm woods */
+    --color-accent: #FFFBEB;
+    /* Warm White - elegant accent */
     --color-success: #34D399;
     /* Emerald - success states */
     --color-warning: #FBBF24;

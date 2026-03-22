@@ -32,127 +32,113 @@ import { Logo } from "@/components/Logo";
 // Welcome section — MOBEUS UNIVERSITY: The Screen Finally Cares
 const WELCOME_VARIANTS = [
   {
-    badge: "MOBEUS UNIVERSITY",
-    title: "The Screen Finally Cares",
-    subtitle: "Learn how conversational labor changes everything.",
+    badge: "HOME BUTLER CLUB",
+    title: "Elevated Home Living",
+    subtitle: "Experience a new standard of comfort and white-glove service.",
     generativeSubsections: [
-      // 0. WelcomeCarousel - Journey cards
       {
         id: "journey-carousel",
         templateId: "WelcomeCarousel",
         props: {
           cards: [
-            { question: "What is Mobeus?", subtext: "Transforming software into conversational labor.", icon: "Sparkles", actionPhrase: "what is mobeus" },
-            { question: "What's a tele?", subtext: "Conversational workers. Not chatbots.", icon: "Users", actionPhrase: "what is a tele" },
-            { question: "What's Teleglass?", subtext: "The platform for conversational labor.", icon: "Globe", actionPhrase: "tell me about teleglass" },
-            { question: "How is this different?", subtext: "50 years: humans→machines. We inverted that.", icon: "Zap", actionPhrase: "how is this different from software" },
-            { question: "Who built this?", subtext: "Richie Etwaru and Mike Sutcliff. 5 years ago.", icon: "Users", actionPhrase: "who founded mobeus" },
-            { question: "When is launch?", subtext: "March/April 2026 — The screen finally cares.", icon: "Calendar", actionPhrase: "sign up for the launch event", isAccent: true, accentColor: "purple" }
+            { question: "What is Home Butler?", subtext: "24/7 butler service and full home management.", icon: "Home", actionPhrase: "tell me about your services" },
+            { question: "Membership Tiers", subtext: "Essential care to ultimate luxury.", icon: "Star", actionPhrase: "what are the pricing tiers" },
+            { question: "How It Works", subtext: "Choose a tier and let us handle the rest.", icon: "CheckCircle", actionPhrase: "how does it work" },
+            { question: "Ready to Apply?", subtext: "Your first step toward stress-free luxury.", icon: "Key", actionPhrase: "sign me up", isAccent: true, accentColor: "purple" }
           ]
         }
       },
-      // 1. Hero - The Promise
       {
         id: "promise-hero",
         templateId: "Hero",
         props: {
-          headline: "The Screen Finally Cares",
-          description: "Conversational labor is coming.",
-          ctaLabel: "See How",
-          ctaActionPhrase: "what is mobeus"
+          headline: "Experience a new standard of comfort",
+          description: "Your home deserves the highest level of attention—delivered by a team you can trust.",
+          ctaLabel: "View Memberships",
+          ctaActionPhrase: "what are the pricing tiers"
         }
       },
-      // 2. Trio - Three Innovations
       {
         id: "three-innovations",
         templateId: "Trio",
         props: {
+          headline: "Membership Tiers",
+          subtitle: "Choose your level of care",
           cards: [
             {
-              icon: "Cpu",
-              title: "Tech Agnostic",
-              description: "Any model. Any cloud. Any device.",
-              actionPhrase: "explain tech agnostic"
+              icon: "Star",
+              badge: "$99/mo",
+              title: "Tier I - Essential Care",
+              description: "24/7 on-call butler, priority scheduling, and home wellness walkthroughs.",
+              actionPhrase: "tell me about tier 1"
             },
             {
-              icon: "Globe",
-              title: "Channel Agnostic",
-              description: "Chat. Voice. Phone. SMS. Avatar. Glass.",
-              actionPhrase: "explain channel agnostic"
+              icon: "Award",
+              badge: "$199/mo",
+              title: "Tier II - Enhanced Living",
+              description: "10% off services with priority anytime scheduling.",
+              actionPhrase: "tell me about tier 2"
             },
             {
-              icon: "Sparkles",
-              title: "Persona Agnostic",
-              description: "Any face. Any voice. Any look.",
-              actionPhrase: "explain persona agnostic"
+              icon: "Crown",
+              badge: "$299/mo",
+              title: "Tier III - Ultimate Butler",
+              description: "VIP 24/7 access and front-of-the-line scheduling.",
+              actionPhrase: "tell me about tier 3"
             }
           ],
           numbered: false,
-          ctaLabel: "Learn More",
-          ctaActionPhrase: "show me how teleglass works"
+          ctaLabel: "Apply Now",
+          ctaActionPhrase: "sign me up"
         }
       },
-      // 3. Grid - The Six Agnostic Foundations
       {
-        id: "agnostic-foundations",
+        id: "core-pillars",
         templateId: "Grid",
         props: {
-          headline: "Six Agnostic Foundations",
-          badge: "PLATFORM",
+          headline: "Why Homeowners Choose Us",
+          badge: "SERVICES",
           items: [
             {
-              icon: "Cpu",
-              title: "Tech Agnostic",
-              description: "Any model. Any cloud. Any device.",
-              actionPhrase: "explain tech agnostic"
+              icon: "Clock",
+              title: "24 / 7 Butler Service",
+              description: "Always available for urgent or routine tasks.",
+              actionPhrase: "tell me about butler service"
             },
             {
-              icon: "Radio",
-              title: "Channel Agnostic",
-              description: "Chat. Voice. Phone. SMS. Avatar. Glass.",
-              actionPhrase: "explain channel agnostic"
+              icon: "Home",
+              title: "Full Home Management",
+              description: "Cleaning, errands, organization, and repairs.",
+              actionPhrase: "tell me about home management"
             },
             {
-              icon: "Briefcase",
-              title: "Use Case Agnostic",
-              description: "Sales. Support. Training. Transactions.",
-              actionPhrase: "explain use case agnostic"
+              icon: "Heart",
+              title: "Stress-Free Luxury",
+              description: "Focus on your life, we handle the tasks.",
+              actionPhrase: "tell me about stress free luxury"
             },
             {
-              icon: "Languages",
-              title: "Language Agnostic",
-              description: "Every language. Every culture.",
-              actionPhrase: "explain language agnostic"
-            },
-            {
-              icon: "Building2",
-              title: "Industry Agnostic",
-              description: "Healthcare. Finance. Retail. Government. Education.",
-              actionPhrase: "explain industry agnostic"
-            },
-            {
-              icon: "User",
-              title: "Persona Agnostic",
-              description: "Any face. Any voice. Any look.",
-              actionPhrase: "explain persona agnostic"
+              icon: "Shield",
+              title: "Reliability You Can Trust",
+              description: "Trusted, background checked professionals.",
+              actionPhrase: "tell me about your professionals"
             }
           ]
         }
       },
-      // 4. Banner - Get Started
       {
         id: "get-started",
         templateId: "Banner",
         props: {
-          headline: "The Teleglass Launch Event",
-          subheadline: "March/April 2026",
-          ctaLabel: "Reserve Your Spot",
-          ctaActionPhrase: "sign up for the launch event",
+          headline: "Join The Home Butler Club",
+          subheadline: "Your home deserves the highest level of attention.",
+          ctaLabel: "Apply for Membership",
+          ctaActionPhrase: "sign me up",
           variant: "gradient"
         }
       }
     ]
-  },
+  }
 ];
 
 
