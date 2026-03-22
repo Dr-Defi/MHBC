@@ -163,6 +163,17 @@ export const TelelaborIcons: React.FC<TelelaborIconsProps> = ({
         </Button>
       )}
 
+      {/* Disconnect Button - RED CTA */}
+      {avatarState === 'connected' && (
+        <Button
+          onClick={onAvatarClick}
+          className="rounded-full bg-red-500/80 border border-red-500/50 hover:bg-red-600 text-white transition-all duration-300 font-bold uppercase text-sm tracking-wide flex items-center gap-2 px-6 py-2 ml-2"
+          size="default"
+        >
+          STOP
+        </Button>
+      )}
+
       {/* Avatar Icon with Loading Ring - EXACT animation from ImageGeneratingState */}
       <div className="relative">
         {isLoading && (
