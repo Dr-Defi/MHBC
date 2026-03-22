@@ -680,11 +680,17 @@ button,
 
   /* Apply grayscale filters when lightboard mode is active */
   body.lightboard-mode .bg-layer,
-  body.lightboard-mode #avatarVideo,
   body.lightboard-mode video,
   body.lightboard-mode .background-layer,
   body.lightboard-mode [class*="background"]:not(.hero-background):not(.no-lightboard):not(.no-lightboard *) {
     filter: grayscale(1) contrast(1.2) !important;
+  }
+
+  /* Completely hide backend live video to force static Butler image */
+  #avatarVideo {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
 
   /* Special handling for hero background */
