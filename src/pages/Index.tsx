@@ -93,6 +93,31 @@ const WELCOME_VARIANTS = [
         }
       },
       {
+        id: "premium-package",
+        templateId: "Table",
+        props: {
+          title: "Monthly Membership Package",
+          subtitle: "$1,000.00 / month. Earn 12,000 loyalty points ($25 value) monthly.",
+          columns: [
+            { key: "service", label: "Included Services", sortable: false },
+            { key: "frequency", label: "Frequency", sortable: false },
+            { key: "value", label: "Annual Value", align: "right", sortable: true }
+          ],
+          rows: [
+            { id: "1", cells: { service: "House Cleaning", frequency: "4 hours (monthly)", value: "$2,640.00" } },
+            { id: "2", cells: { service: "Car Wash", frequency: "2 washes per month", value: "$1,800.00" } },
+            { id: "3", cells: { service: "Window Cleaning", frequency: "1 service per year", value: "$1,500.00" } },
+            { id: "4", cells: { service: "Deep Cleaning", frequency: "2 services per year (8 hrs each)", value: "$1,200.00" } },
+            { id: "5", cells: { service: "Bulk Pickup", frequency: "2 services per year", value: "$800.00" } },
+            { id: "6", cells: { service: "Christmas Tree Decoration", frequency: "1 service per year", value: "$500.00" } },
+            { id: "7", cells: { service: "Gutter Cleaning", frequency: "1 service per year", value: "$400.00" } },
+            { id: "8", cells: { service: "Snow Plowing", frequency: "2 services per year", value: "$300.00" } }
+          ],
+          ctaLabel: "Apply for Premium",
+          ctaActionPhrase: "sign me up"
+        }
+      },
+      {
         id: "core-pillars",
         templateId: "Grid",
         props: {
