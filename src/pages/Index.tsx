@@ -41,10 +41,10 @@ const WELCOME_VARIANTS = [
         templateId: "WelcomeCarousel",
         props: {
           cards: [
-            { question: "What is Home Butler?", subtext: "24/7 butler service and full home management.", icon: "Home", actionPhrase: "tell me about your services" },
-            { question: "Membership Tiers", subtext: "Essential care to ultimate luxury.", icon: "Star", actionPhrase: "what are the pricing tiers" },
-            { question: "How It Works", subtext: "Choose a tier and let us handle the rest.", icon: "CheckCircle", actionPhrase: "how does it work" },
-            { question: "Ready to Apply?", subtext: "Your first step toward stress-free luxury.", icon: "Key", actionPhrase: "sign me up", isAccent: true, accentColor: "purple" }
+            { question: "What is Home Butler?", subtext: "24/7 butler service and full home management.", icon: "BellRing", actionPhrase: "tell me about your services" },
+            { question: "Membership Tiers", subtext: "Essential care to ultimate luxury.", icon: "Diamond", actionPhrase: "what are the pricing tiers" },
+            { question: "How It Works", subtext: "Choose a tier and let us handle the rest.", icon: "ClipboardList", actionPhrase: "how does it work" },
+            { question: "Ready to Apply?", subtext: "Your first step toward stress-free luxury.", icon: "DoorOpen", actionPhrase: "sign me up", isAccent: true, accentColor: "flamingo" }
           ]
         }
       },
@@ -66,21 +66,21 @@ const WELCOME_VARIANTS = [
           subtitle: "Choose your level of care",
           cards: [
             {
-              icon: "Star",
+              icon: "ShieldCheck",
               badge: "$99/mo",
               title: "Tier I - Essential Care",
               description: "24/7 on-call butler, priority scheduling, and home wellness walkthroughs.",
               actionPhrase: "tell me about tier 1"
             },
             {
-              icon: "Award",
+              icon: "Briefcase",
               badge: "$199/mo",
               title: "Tier II - Enhanced Living",
               description: "10% off services with priority anytime scheduling.",
               actionPhrase: "tell me about tier 2"
             },
             {
-              icon: "Crown",
+              icon: "KeyRound",
               badge: "$299/mo",
               title: "Tier III - Ultimate Butler",
               description: "VIP 24/7 access and front-of-the-line scheduling.",
@@ -92,31 +92,7 @@ const WELCOME_VARIANTS = [
           ctaActionPhrase: "sign me up"
         }
       },
-      {
-        id: "premium-package",
-        templateId: "Table",
-        props: {
-          title: "Monthly Membership Package",
-          subtitle: "$1,000.00 / month. Earn 12,000 loyalty points ($25 value) monthly.",
-          columns: [
-            { key: "service", label: "Included Services", sortable: false },
-            { key: "frequency", label: "Frequency", sortable: false },
-            { key: "value", label: "Annual Value", align: "right", sortable: true }
-          ],
-          rows: [
-            { id: "1", cells: { service: "House Cleaning", frequency: "4 hours (monthly)", value: "$2,640.00" } },
-            { id: "2", cells: { service: "Car Wash", frequency: "2 washes per month", value: "$1,800.00" } },
-            { id: "3", cells: { service: "Window Cleaning", frequency: "1 service per year", value: "$1,500.00" } },
-            { id: "4", cells: { service: "Deep Cleaning", frequency: "2 services per year (8 hrs each)", value: "$1,200.00" } },
-            { id: "5", cells: { service: "Bulk Pickup", frequency: "2 services per year", value: "$800.00" } },
-            { id: "6", cells: { service: "Christmas Tree Decoration", frequency: "1 service per year", value: "$500.00" } },
-            { id: "7", cells: { service: "Gutter Cleaning", frequency: "1 service per year", value: "$400.00" } },
-            { id: "8", cells: { service: "Snow Plowing", frequency: "2 services per year", value: "$300.00" } }
-          ],
-          ctaLabel: "Apply for Premium",
-          ctaActionPhrase: "sign me up"
-        }
-      },
+
       {
         id: "core-pillars",
         templateId: "Grid",
@@ -125,25 +101,25 @@ const WELCOME_VARIANTS = [
           badge: "SERVICES",
           items: [
             {
-              icon: "Clock",
+              icon: "PhoneCall",
               title: "24 / 7 Butler Service",
               description: "Always available for urgent or routine tasks.",
               actionPhrase: "tell me about butler service"
             },
             {
-              icon: "Home",
+              icon: "Hammer",
               title: "Full Home Management",
               description: "Cleaning, errands, organization, and repairs.",
               actionPhrase: "tell me about home management"
             },
             {
-              icon: "Heart",
+              icon: "Coffee",
               title: "Stress-Free Luxury",
               description: "Focus on your life, we handle the tasks.",
               actionPhrase: "tell me about stress free luxury"
             },
             {
-              icon: "Shield",
+              icon: "Lock",
               title: "Reliability You Can Trust",
               description: "Trusted, background checked professionals.",
               actionPhrase: "tell me about your professionals"
@@ -1342,19 +1318,6 @@ const Index = () => {
     playUISound("on", "avatar");
 
     try {
-      // Check permissions safely first
-      try {
-        const micPermissionState = await navigator.permissions.query({ name: "microphone" as PermissionName });
-        if (micPermissionState.state === "denied") {
-          console.warn("Microphone permission explicitly denied");
-          showErrorVideo();
-          setAvatarState("off");
-          return;
-        }
-      } catch (err) {
-        console.log("Permission query not supported or failed:", err);
-      }
-
       // Wait for UIFramework to be available (up to 5 seconds)
       let frameworkLoaded = false;
       for (let i = 0; i < 50; i++) {
@@ -1368,6 +1331,7 @@ const Index = () => {
       if (!frameworkLoaded) {
         console.error("UIFramework failed to load within 5 seconds");
         setAvatarState("off");
+        setIsConnecting(false);
         return;
       }
 
@@ -1394,8 +1358,8 @@ const Index = () => {
       } catch (e) { console.error("Error showing loading video:", e); }
 
       await (window as any).UIFramework?.setAutoConnectOptions?.({
-        avatar: false,
-        voice: false,
+        avatar: true,
+        voice: true,
         waitForAvatarBeforeVoice: true,
       });
       await (window as any).UIFramework?.connectAll?.();
@@ -1447,7 +1411,7 @@ const Index = () => {
       // Send greeting prompt 500ms after connection is stable (only for START button)
       if (sendGreeting) {
         setTimeout(() => {
-          notifyTele("hello");
+          notifyTele("Please greet the visitor by saying: Welcome to the Home Butler Club! My name is Ruben. Any questions you may have, please feel free to ask anytime!");
         }, 500);
       }
 
@@ -1507,6 +1471,16 @@ const Index = () => {
       delete (window as any).isAvatarConnected;
     };
   }, [handleConnectAvatar, avatarState]);
+
+  // ============================================
+  // AUTO-CONNECT DISABLED: User wants manual connection controls
+  // ============================================
+  useEffect(() => {
+    // let cancelled = false;
+    // const silentAutoConnect = async () => { ... }
+    // silentAutoConnect();
+    // return () => { cancelled = true; };
+  }, []); // Run once on mount
 
   if (isCheckingAuth) {
     return (
@@ -1579,19 +1553,16 @@ const Index = () => {
   // Static onboarding always uses empty background
   if (!isOnboardingComplete) {
     imageBackground = backgroundEmpty;
-  } else if (showWelcomeVideo) {
-    if (avatarState !== "off" || isTeleThinking) {
-      imageBackground = backgroundEmpty;
-    }
-  } else {
-    if (avatarState === "connected" || isAvatarConnecting || isTeleThinking) {
-      imageBackground = backgroundEmpty;
-    }
+  }
+  // Keep the hero background (with Ruben) visible at all times
+  // Only switch to empty for explicit tele thinking states
+  if (isTeleThinking) {
+    imageBackground = backgroundEmpty;
   }
 
   return (
     <CarColorProvider>
-      <GitVersionIndicator />
+      {/* <GitVersionIndicator /> */}
       {/* Dynamic SEO based on active section - TeleLabor Platform */}
       <SEO {...(sectionSEO[activeSection as keyof typeof sectionSEO] || sectionSEO.welcome)} />
 
@@ -1609,14 +1580,14 @@ const Index = () => {
         onComplete={completeOnboarding}
       />
 
-      <div className="min-h-screen squeeze-target overflow-auto">
+      <div className="min-h-screen squeeze-target overflow-auto pb-32">
         {/* Elegant pulse effect overlay - very subtle */}
         {showFlash && (
           <div
             className="fixed inset-0 pointer-events-none"
             style={{
               zIndex: 5,
-              background: "radial-gradient(circle at center, rgba(155, 93, 229, 0.15), transparent 70%)",
+              background: "radial-gradient(circle at center, rgba(197, 168, 128, 0.15), transparent 70%)",
               opacity: 0.5,
               animation: "fade-in 0.1s ease-out, fade-out 0.15s ease-out 0.1s forwards",
             }}
@@ -1629,7 +1600,7 @@ const Index = () => {
             className="fixed inset-0 pointer-events-none"
             style={{
               zIndex: 4,
-              background: "radial-gradient(circle at center, rgba(155, 93, 229, 0.12), transparent 65%)",
+              background: "radial-gradient(circle at center, rgba(197, 168, 128, 0.12), transparent 65%)",
               animation: "tele-thinking-pulse 2s ease-in-out infinite",
             }}
           />

@@ -5,6 +5,7 @@ import { teleAvatar } from "@/assets";
 import { useSound } from "@/hooks/useSound";
 import { Button } from "@/components/ui/button";
 import TelelaborIcons from "@/components/TelelaborIcons";
+import FloatingTeleControls from "@/components/FloatingTeleControls";
 import { useUIFrameworkChat } from "@/hooks/useUIFrameworkChat";
 
 import { ToolCallIndicator } from "@/components/chat/ToolCallIndicator";
@@ -201,6 +202,9 @@ const TelelaborSection = ({
       playUISound("on", "mic", 0.4);
     }
   }, [isThinking]);
+
+  // Tele auto-speaks on page load — handled by silent auto-connect in Index.tsx
+  // No chat panel auto-open needed
 
   // Use mock messages if no real messages, otherwise use real messages
   const displayMessages = chatMessages;
@@ -962,6 +966,17 @@ const TelelaborSection = ({
         onSmileyToggle={handleSmileyToggle}
         isSmileyOn={isSmileyOn}
         isLoading={navigationIsLoading || isConnecting}
+      />
+
+      {/* Floating Bottom Tele Controls (Connect / Disconnect) */}
+      <FloatingTeleControls
+        avatarState={avatarState}
+        isSoundOn={isSoundOn}
+        isMicMuted={isMicMuted}
+        onConnect={onAvatarClick}
+        onDisconnect={onAvatarClick}
+        onSoundToggle={handleSoundToggle}
+        onMicToggle={handleMicToggle}
       />
 
       {/* Chat Glass Panel - FULLY TRANSPARENT - Avatar fully visible */}

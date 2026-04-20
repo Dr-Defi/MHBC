@@ -72,7 +72,7 @@ export const GitVersionIndicator: React.FC = () => {
             <div style={{ fontWeight: 'bold' }}>{BUILD_INFO.timestamp}</div>
             <div style={{ fontSize: '10px', opacity: 0.6, marginTop: '4px' }}>Engineer</div>
             <div style={{ fontSize: '10px', opacity: 0.6 }}>{BUILD_INFO.author}</div>
-            <div style={{ fontSize: '9px', color: '#5EEAD4', opacity: 1, marginTop: '4px' }}>{BUILD_INFO.branch}</div>
+            <div style={{ fontSize: '9px', color: '#C5A880', opacity: 1, marginTop: '4px' }}>{BUILD_INFO.branch}</div>
         </div>
     );
 };

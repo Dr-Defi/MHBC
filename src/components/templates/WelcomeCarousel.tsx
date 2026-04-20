@@ -13,7 +13,8 @@ import {
     Heart, Users, Globe, Calendar, Sparkles, Zap,
     Phone, ClipboardList, Search, Building,
     PhoneOff, FileX, SearchX, UserX, Landmark,
-    CalendarCheck, SearchCheck, ShieldCheck, Music
+    CalendarCheck, SearchCheck, ShieldCheck, Music,
+    BellRing, Diamond, DoorOpen
 } from 'lucide-react';
 
 interface QuestionCard {
@@ -23,7 +24,7 @@ interface QuestionCard {
     imageUrl?: string;  // For image-based cards
     actionPhrase: string;
     isAccent?: boolean;
-    accentColor?: 'purple' | 'teal';  // Support for different accent colors
+    accentColor?: 'flamingo' | 'purple' | 'teal';  // Support for different accent colors
 }
 
 interface WelcomeCarouselProps {
@@ -121,7 +122,7 @@ export const WelcomeCarousel: React.FC<WelcomeCarouselProps> = ({
     );
 
     const getIcon = (iconName: string, isAccent: boolean) => {
-        const iconClass = `w-10 h-10 ${isAccent ? 'text-white' : 'text-amethyst'}`;
+        const iconClass = `w-10 h-10 ${isAccent ? 'text-white' : 'text-primary'}`;
         switch (iconName) {
             case 'sparkles': return <Sparkles className={iconClass} />;
             case 'users': return <Users className={iconClass} />;
@@ -131,7 +132,8 @@ export const WelcomeCarousel: React.FC<WelcomeCarouselProps> = ({
             case 'calendar': return <Calendar className={iconClass} />;
             case 'music': return <Music className={iconClass} />;
             case 'phone': return <Phone className={iconClass} />;
-            case 'clipboard': return <ClipboardList className={iconClass} />;
+            case 'clipboard': 
+            case 'ClipboardList': return <ClipboardList className={iconClass} />;
             case 'search': return <Search className={iconClass} />;
             case 'building': return <Building className={iconClass} />;
             case 'phoneOff': return <PhoneOff className={iconClass} />;
@@ -142,6 +144,12 @@ export const WelcomeCarousel: React.FC<WelcomeCarouselProps> = ({
             case 'calendarCheck': return <CalendarCheck className={iconClass} />;
             case 'searchCheck': return <SearchCheck className={iconClass} />;
             case 'shieldCheck': return <ShieldCheck className={iconClass} />;
+            case 'bellRing':
+            case 'BellRing': return <BellRing className={iconClass} />;
+            case 'diamond':
+            case 'Diamond': return <Diamond className={iconClass} />;
+            case 'doorOpen':
+            case 'DoorOpen': return <DoorOpen className={iconClass} />;
             default: return <Sparkles className={iconClass} />;
         }
     };
@@ -165,7 +173,7 @@ export const WelcomeCarousel: React.FC<WelcomeCarouselProps> = ({
                         {cards.map((card, idx) => {
                             const isImageCard = !!card.imageUrl;
 
-                            const accentBgColor = card.accentColor === 'teal' ? 'bg-aqua' : 'bg-amethyst';
+                            const accentBgColor = card.accentColor === 'teal' ? 'bg-aqua' : (card.accentColor === 'flamingo' ? 'bg-flamingo' : 'bg-amethyst');
                             return (
                                 <div
                                     key={idx}
@@ -224,7 +232,7 @@ export const WelcomeCarousel: React.FC<WelcomeCarouselProps> = ({
             {/* Progress dots */}
             <div className="flex justify-center items-center gap-2 mt-6">
                 {cards.map((card, index) => {
-                    const dotColor = card.isAccent ? (card.accentColor === 'teal' ? 'bg-aqua' : 'bg-amethyst') : 'bg-mist';
+                    const dotColor = card.isAccent ? (card.accentColor === 'teal' ? 'bg-aqua' : (card.accentColor === 'flamingo' ? 'bg-flamingo' : 'bg-amethyst')) : 'bg-mist';
                     return (
                         <button
                             key={index}

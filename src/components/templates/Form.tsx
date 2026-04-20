@@ -53,6 +53,12 @@ interface FormProps {
     confirmationTitle?: string;
     confirmationMessage?: string;
     content?: ContentPanel;  // NEW: Left side content
+    termsConfig?: {
+        label: string;
+        link: string;
+        linkText: string;
+        required?: boolean;
+    };
 }
 
 const getIcon = (iconName?: string): LucideIcon => {
@@ -140,11 +146,13 @@ export const Form: React.FC<FormProps> = ({
     confirmationTitle,
     confirmationMessage,
     content,
+    termsConfig,
 }) => {
     const { playClick } = useSound();
     const [localValues, setLocalValues] = useState<Record<string, string>>(propValues);
     const [showCelebration, setShowCelebration] = useState(false);
     const [submitted, setSubmitted] = useState(false);
+    const [termsAccepted, setTermsAccepted] = useState(false);
 
     // Live update: When tele sends new values, update the form fields
     useEffect(() => {
@@ -166,10 +174,24 @@ export const Form: React.FC<FormProps> = ({
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
+        
+        // Validation for terms if required
+        if (termsConfig?.required && !termsAccepted) {
+            import("@/hooks/use-toast").then(({ toast }) => {
+                toast({
+                    title: "Action Required",
+                    description: "Please read and accept the terms to continue.",
+                    variant: "destructive"
+                });
+            });
+            return;
+        }
+
         playClick();
         if (submitActionPhrase && fields) {
             const summary = fields.map(f => `${f.label}: ${localValues[f.name] || ''}`).join(', ');
-            notifyTele(`${submitActionPhrase} - ${summary}`);
+            const termsSummary = termsConfig ? ` | Terms Accepted: ${termsAccepted}` : '';
+            notifyTele(`${submitActionPhrase} - ${summary}${termsSummary}`);
         }
     };
 
@@ -334,6 +356,37 @@ export const Form: React.FC<FormProps> = ({
                                 </div>
                             );
                         })}
+
+                        {/* Terms and Conditions Checkbox */}
+                        {termsConfig && (
+                            <div className="flex items-start gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] hover:bg-white/[0.04] transition-all duration-300">
+                                <input
+                                    type="checkbox"
+                                    id="terms-checkbox"
+                                    checked={termsAccepted}
+                                    onChange={(e) => {
+                                        playClick();
+                                        setTermsAccepted(e.target.checked);
+                                    }}
+                                    className="mt-1.5 w-5 h-5 rounded border-white/[0.1] bg-white/[0.05] text-flamingo focus:ring-flamingo"
+                                />
+                                <label htmlFor="terms-checkbox" className="text-sm text-mist/60 leading-relaxed cursor-pointer select-none">
+                                    {termsConfig.label}{' '}
+                                    <a
+                                        href={termsConfig.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-sapphire hover:text-sapphire/80 font-semibold underline underline-offset-4 decoration-sapphire/30"
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            playClick();
+                                        }}
+                                    >
+                                        {termsConfig.linkText}
+                                    </a>
+                                </label>
+                            </div>
+                        )}
 
                         {/* Spacer to push button to bottom */}
                         <div className="flex-grow" />

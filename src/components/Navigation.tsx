@@ -7,6 +7,7 @@ import { sendToTele } from "@/utils/teleInteraction";
 import { useSound } from "@/hooks/useSound";
 import { SubsectionMetadata } from "@/types/subsection";
 import { useShadowEffects } from "@/contexts/ShadowEffectsContext";
+import { hbcLogo } from "@/assets";
 
 
 type NavigationProps = {
@@ -91,9 +92,14 @@ const Navigation = ({ activeSection, isChatGlassOpen, onSectionChange }: Navigat
           <div className="flex items-center justify-between h-20 sm:h-24 lg:h-28">
             <div className="flex items-center gap-6">
               {/* Logo */}
-              <div className="no-lightboard flex items-center">
-                <span className="text-xl font-bold tracking-tight text-mist whitespace-nowrap">HOME BUTLER CLUB</span>
-              </div>
+              {/* Logo with Luxury Shimmer - Clickable to Main Site */}
+              <a 
+                href="/" 
+                className="no-lightboard flex items-center group relative overflow-hidden rounded-lg cursor-pointer transition-transform hover:scale-[1.03]"
+              >
+                <img src={hbcLogo} alt="Home Butler Club" className="h-14 sm:h-18 w-auto object-contain drop-shadow-[0_2px_10px_rgba(197,168,128,0.3)] filter brightness-110" />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out pointer-events-none" />
+              </a>
 
               {/* Desktop Navigation - VISIBLE ON DARK BACKGROUND */}
               <div className="hidden xl:flex items-end self-end mt-1 space-x-1.5">
@@ -126,21 +132,32 @@ const Navigation = ({ activeSection, isChatGlassOpen, onSectionChange }: Navigat
               </div>
             </div>
 
-            {/* Mobile menu button */}
-            {!isChatGlassOpen && (
-              <div className="flex items-center">
+            {/* Mobile/Action area */}
+            <div className="flex items-center gap-4">
+              <Button
+                onClick={() => {
+                  handleAcknowledgment('header-join');
+                  playUniversalSound();
+                  sendToTele("I want to join the Home Butler Club");
+                }}
+                className="hidden sm:flex px-6 py-2 bg-gradient-to-r from-[#C5A880] to-[#b3956d] text-white font-bold rounded-full shadow-lg hover:scale-105 transition-all text-[13px] tracking-wide"
+              >
+                Apply Now
+              </Button>
+
+              {!isChatGlassOpen && (
                 <button
                   onClick={() => {
                     handleAcknowledgment('nav-menu-open');
                     playUniversalSound();
                     setIsMenuOpen(!isMenuOpen);
                   }}
-                  className="xl:hidden p-2 rounded-full text-mist hover:bg-mist/10 backdrop-blur-sm transition-all duration-300 mr-3"
+                  className="xl:hidden p-2 rounded-full text-mist hover:bg-mist/10 backdrop-blur-sm transition-all duration-300"
                 >
                   {isMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
                 </button>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -33,27 +33,27 @@ export default {
     extend: {
       colors: {
         /* ============================================
-         * 8-COLOR BRAND PALETTE - MOBEUS.COM STYLE
+         * 8-COLOR BRAND PALETTE - LUXURY BUTLER STYLE
          * ============================================
-         * Mist Gray:      #F5F5F5 - Light backgrounds, text, icons
-         * Onyx Black:     #0D0D0D - Dark backgrounds (deeper black)
-         * Violet Purple:  #9B5DE5 - Primary accent, CTAs, headlines
-         * Wave Blue:      #003D4F - Secondary accent, headers
-         * Turmeric Yellow:#CC850A - Buttons, warnings
-         * Jade Green:     #5EEAD4 - Success states, teal accents
-         * Sapphire Blue:  #47A1AD - Buttons, links
-         * Amethyst Purple:#7C3AED - Deep purple accents
+         * Mist Gray:      #F8F9FA - Light backgrounds, text, icons
+         * Onyx Black:     #0A0A0A - Dark backgrounds (deeper black)
+         * Bronze / Gold:  #C5A880 - Primary accent, CTAs, headlines (mapped to flamingo)
+         * Charcoal:       #1A1C23 - Secondary accent, headers (mapped to wave)
+         * Metallic Gold:  #D4AF37 - Buttons, warnings (mapped to turmeric)
+         * Spruce Green:   #2E4A42 - Success states, teal accents (mapped to jade)
+         * Slate Navy:     #2B3A42 - Buttons, links (mapped to sapphire)
+         * Dark Bronze:    #8C7853 - Deep purple accents (mapped to amethyst)
          * ============================================ */
 
-        // The 8 Brand Colors - MOBEUS STYLE
-        mist: '#F5F5F5',
-        onyx: '#0D0D0D',
-        flamingo: '#9B5DE5',  // NOW PURPLE - Primary accent
-        wave: '#003D4F',
-        turmeric: '#CC850A',
-        jade: '#5EEAD4',      // Teal accent like mobeus.com
-        sapphire: '#47A1AD',
-        amethyst: '#7C3AED',  // Deeper purple
+        // The 8 Brand Colors - LUXURY STYLE
+        mist: '#F8F9FA',
+        onyx: '#0A0A0A',
+        flamingo: '#C5A880',  // Primary accent (Bronze / Gold)
+        wave: '#1A1C23',      // Charcoal / Slate
+        turmeric: '#D4AF37',  // Metallic Gold
+        jade: '#2E4A42',      // Spruce / Forest
+        sapphire: '#2B3A42',  // Slate Navy
+        amethyst: '#8C7853',  // Dark Bronze
 
         // Semantic mappings
         border: "var(--border)",
@@ -269,11 +269,11 @@ export default {
         },
         "glow-pulse": {
           "0%, 100%": {
-            boxShadow: "0 0 20px rgba(65, 150, 217, 0.5), 0 0 40px rgba(65, 150, 217, 0.3)",
+            boxShadow: "0 0 20px rgba(197, 168, 128, 0.5), 0 0 40px rgba(197, 168, 128, 0.3)",
             filter: "brightness(1)"
           },
           "50%": {
-            boxShadow: "0 0 30px rgba(65, 150, 217, 0.8), 0 0 60px rgba(65, 150, 217, 0.5)",
+            boxShadow: "0 0 30px rgba(197, 168, 128, 0.8), 0 0 60px rgba(197, 168, 128, 0.5)",
             filter: "brightness(1.2)"
           }
         },

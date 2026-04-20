@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Outfit', sans-serif;
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
 /* ============================================
  * CHROME BACKDROP-FILTER FIX
  * Chrome/Chromium requires special handling for backdrop-filter:
@@ -72,8 +87,8 @@ button,
 }
 
 .interactive-indicator:hover {
-  background: rgba(65, 150, 217, 0.15) !important;
-  border-color: rgba(65, 150, 217, 0.4) !important;
+  background: rgba(197, 168, 128, 0.15) !important;
+  border-color: rgba(197, 168, 128, 0.4) !important;
   transform: scale(1.02);
 }
 
@@ -82,7 +97,7 @@ button,
   bottom: calc(100% + 8px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(65, 150, 217, 0.95);
+  background: rgba(197, 168, 128, 0.95);
   color: white;
   padding: 8px 12px;
   border-radius: 6px;
@@ -191,30 +206,30 @@ button,
     /* ============================================
      * CORE COLORS — Work with any background
      * ============================================ */
-    --color-mist: #FFFFFF;
-    --color-onyx: #000000;
+    --color-mist: #F8F9FA;
+    --color-onyx: #0A0A0A;
 
     /* Accent Colors - Refined for harmony */
-    --color-primary: #2C3345;
-    /* Dark Slate Blue - from exact website */
-    --color-secondary: #ACACAC;
-    /* Light Gray - from exact website */
-    --color-accent: #8C8C8C;
-    /* Medium Gray - elegant accent */
-    --color-success: #34D399;
-    /* Emerald - success states */
-    --color-warning: #FBBF24;
-    /* Amber - warnings */
+    --color-primary: #C5A880;
+    /* Warm Bronze/Gold */
+    --color-secondary: #2B3A42;
+    /* Slate Navy */
+    --color-accent: #8C7853;
+    /* Dark Bronze */
+    --color-success: #2E4A42;
+    /* Deep Spruce */
+    --color-warning: #D4AF37;
+    /* Metallic Gold */
     --color-muted: #94A3B8;
     /* Slate - subdued text */
 
     /* Legacy color mappings */
     --color-flamingo: var(--color-primary);
-    --color-wave: #1E3A5F;
+    --color-wave: #1A1C23;
     --color-turmeric: var(--color-warning);
     --color-jade: var(--color-success);
     --color-sapphire: var(--color-secondary);
-    --color-amethyst: #8B5CF6;
+    --color-amethyst: var(--color-accent);
 
     /* ============================================
      * GLASS TOKENS — Apple-style frosted glass
@@ -321,9 +336,9 @@ button,
     --shadow-float-mid: 0 8px 32px rgba(0, 0, 0, 0.16);
     --shadow-float-far: 0 16px 48px rgba(0, 0, 0, 0.24);
 
-    --shadow-glow-primary: 0 0 24px rgba(167, 139, 250, 0.3);
-    --shadow-glow-secondary: 0 0 24px rgba(103, 232, 249, 0.3);
-    --shadow-glow-accent: 0 0 24px rgba(244, 114, 182, 0.3);
+    --shadow-glow-primary: 0 0 24px rgba(197, 168, 128, 0.3);
+    --shadow-glow-secondary: 0 0 24px rgba(43, 58, 66, 0.3);
+    --shadow-glow-accent: 0 0 24px rgba(140, 120, 83, 0.3);
 
     /* Legacy shadow names */
     --shadow-glow-cyan: var(--shadow-glow-secondary);
@@ -1318,19 +1333,19 @@ button,
    * Turmeric: Secondary buttons
    * ============================================ */
 
-  /* CTA Button - Flamingo Pink (#9B5DE5) */
+  /* CTA Button - Gold/Bronze (#C5A880) */
   .btn-cta {
     @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-300;
-    background: rgba(155, 93, 229, 0.8);
+    background: rgba(197, 168, 128, 0.8);
     /* flamingo/80 */
-    border: 1px solid rgba(155, 93, 229, 0.6);
+    border: 1px solid rgba(197, 168, 128, 0.6);
     /* flamingo/60 */
-    color: #F5F5F5;
+    color: #F8F9FA;
     /* mist */
   }
 
   .btn-cta:hover {
-    background: #9B5DE5;
+    background: #C5A880;
     /* flamingo */
     transform: translateY(-1px);
   }
@@ -1339,21 +1354,21 @@ button,
     transform: translateY(0) scale(0.98);
   }
 
-  /* Sapphire Button - Default (#47A1AD) */
+  /* Sapphire Button - Default (#2B3A42) */
   .btn-sapphire {
     @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold transition-all duration-300 backdrop-blur-sm;
-    background: rgba(71, 161, 173, 0.7);
+    background: rgba(43, 58, 66, 0.7);
     /* sapphire/70 */
-    border: 1px solid rgba(71, 161, 173, 0.5);
+    border: 1px solid rgba(43, 58, 66, 0.5);
     /* sapphire/50 */
-    color: #F5F5F5;
+    color: #F8F9FA;
     /* mist */
   }
 
   .btn-sapphire:hover {
-    background: rgba(71, 161, 173, 0.9);
+    background: rgba(43, 58, 66, 0.9);
     /* sapphire/90 */
-    border-color: rgba(71, 161, 173, 0.7);
+    border-color: rgba(43, 58, 66, 0.7);
     transform: translateY(-1px);
   }
 
@@ -1401,8 +1416,8 @@ button,
 
   .text-template-subtitle {
     @apply text-sm;
-    color: #9B5DE5;
-    /* flamingo */
+    color: #C5A880;
+    /* flamingo - gold/bronze */
   }
 
   .text-template-content {
@@ -1424,23 +1439,23 @@ button,
 
   /* Text colors - explicit hex for reliability */
   .text-flamingo {
-    color: #9B5DE5 !important;
+    color: #C5A880 !important;
   }
 
   .text-turmeric {
-    color: #CC850A !important;
+    color: #D4AF37 !important;
   }
 
   .text-jade {
-    color: #5EEAD4 !important;
+    color: #2E4A42 !important;
   }
 
   .text-sapphire {
-    color: #47A1AD !important;
+    color: #2B3A42 !important;
   }
 
   .text-amethyst {
-    color: #7C3AED !important;
+    color: #8C7853 !important;
   }
 
   .text-mist {
@@ -1448,61 +1463,61 @@ button,
   }
 
   .text-wave {
-    color: #003D4F !important;
+    color: #1A1C23 !important;
   }
 
   /* Background colors */
   .bg-flamingo {
-    background-color: #9B5DE5 !important;
+    background-color: #C5A880 !important;
   }
 
   .bg-turmeric {
-    background-color: #CC850A !important;
+    background-color: #D4AF37 !important;
   }
 
   .bg-jade {
-    background-color: #5EEAD4 !important;
+    background-color: #2E4A42 !important;
   }
 
   .bg-sapphire {
-    background-color: #47A1AD !important;
+    background-color: #2B3A42 !important;
   }
 
   .bg-amethyst {
-    background-color: #7C3AED !important;
+    background-color: #8C7853 !important;
   }
 
   /* Background colors with opacity */
   .bg-flamingo\/10 {
-    background-color: rgba(155, 93, 229, 0.1) !important;
+    background-color: rgba(197, 168, 128, 0.1) !important;
   }
 
   .bg-flamingo\/20 {
-    background-color: rgba(155, 93, 229, 0.2) !important;
+    background-color: rgba(197, 168, 128, 0.2) !important;
   }
 
   .bg-turmeric\/10 {
-    background-color: rgba(204, 133, 10, 0.1) !important;
+    background-color: rgba(212, 175, 55, 0.1) !important;
   }
 
   .bg-turmeric\/20 {
-    background-color: rgba(204, 133, 10, 0.2) !important;
+    background-color: rgba(212, 175, 55, 0.2) !important;
   }
 
   .bg-jade\/10 {
-    background-color: rgba(94, 234, 212, 0.1) !important;
+    background-color: rgba(46, 74, 66, 0.1) !important;
   }
 
   .bg-jade\/20 {
-    background-color: rgba(94, 234, 212, 0.2) !important;
+    background-color: rgba(46, 74, 66, 0.2) !important;
   }
 
   .bg-sapphire\/10 {
-    background-color: rgba(71, 161, 173, 0.1) !important;
+    background-color: rgba(43, 58, 66, 0.1) !important;
   }
 
   .bg-sapphire\/20 {
-    background-color: rgba(71, 161, 173, 0.2) !important;
+    background-color: rgba(43, 58, 66, 0.2) !important;
   }
 
   /* ============================================
@@ -1602,14 +1617,14 @@ button,
 
   .template-list-icon {
     @apply w-5 h-5 flex-shrink-0 mt-0.5;
-    color: #9B5DE5;
-    /* flamingo */
+    color: #C5A880;
+    /* flamingo - gold/bronze */
   }
 
   .template-list-icon-sapphire {
     @apply w-5 h-5 flex-shrink-0 mt-0.5;
-    color: #47A1AD;
-    /* sapphire */
+    color: #2B3A42;
+    /* sapphire - slate navy */
   }
 
   /* ============================================
@@ -1619,16 +1634,16 @@ button,
 
   .template-badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
-    background: rgba(155, 93, 229, 0.2);
-    color: #9B5DE5;
-    border: 1px solid rgba(155, 93, 229, 0.3);
+    background: rgba(197, 168, 128, 0.2);
+    color: #C5A880;
+    border: 1px solid rgba(197, 168, 128, 0.3);
   }
 
   .template-badge-sapphire {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wide;
-    background: rgba(71, 161, 173, 0.2);
-    color: #47A1AD;
-    border: 1px solid rgba(71, 161, 173, 0.3);
+    background: rgba(43, 58, 66, 0.2);
+    color: #2B3A42;
+    border: 1px solid rgba(43, 58, 66, 0.3);
   }
 
   .template-badge-turmeric {
@@ -1665,8 +1680,8 @@ button,
   }
 
   .template-metric-highlight {
-    color: #9B5DE5;
-    /* flamingo */
+    color: #C5A880;
+    /* flamingo - gold/bronze */
   }
 
   /* ============================================
@@ -1692,18 +1707,18 @@ button,
 
   .template-icon-container {
     @apply w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0;
-    background: rgba(155, 93, 229, 0.15);
-    border: 1px solid rgba(155, 93, 229, 0.3);
+    background: rgba(197, 168, 128, 0.15);
+    border: 1px solid rgba(197, 168, 128, 0.3);
   }
 
   .template-icon-container-lg {
     @apply w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0;
-    background: rgba(155, 93, 229, 0.15);
-    border: 1px solid rgba(155, 93, 229, 0.3);
+    background: rgba(197, 168, 128, 0.15);
+    border: 1px solid rgba(197, 168, 128, 0.3);
   }
 
   .template-icon-container svg {
-    color: #9B5DE5;
+    color: #C5A880;
   }
 
   /* ============================================
@@ -2726,8 +2741,8 @@ button,
   /* Glow shadow for carousel cards on hover */
   .shadow-glow {
     box-shadow:
-      0 0 20px rgba(65, 150, 217, 0.3),
-      0 0 40px rgba(65, 150, 217, 0.15),
+      0 0 20px rgba(197, 168, 128, 0.3),
+      0 0 40px rgba(197, 168, 128, 0.15),
       0 4px 20px rgba(0, 0, 0, 0.3);
   }
 

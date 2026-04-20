@@ -25,13 +25,13 @@ interface TelelaborIconsProps {
 
 /**
  * 8-COLOR BRAND PALETTE STYLE
- * - Flamingo (#9B5DE5): Primary CTAs (PURPLE)
- * - All icons: mist gray (white for visibility on dark green background)
+ * - Flamingo (#C5A880): Primary CTAs (GOLD/BRONZE)
+ * - All icons: mist gray (white for visibility on dark background)
  * - Very light blur glassmorphism (backdrop-blur-sm)
  * - Avatar visible behind glass
  */
 const getAvatarClasses = (state: AvatarState) => {
-  const base = "w-8 h-8 sm:w-10 sm:h-10 rounded-full cursor-pointer transition-all border-2";
+  const base = "w-7 h-7 sm:w-9 sm:h-9 rounded-full cursor-pointer transition-all border-2";
   switch (state) {
     case 'off':
       return `${base} border-mist/30 bg-mist/5 backdrop-blur-sm`;
@@ -130,48 +130,11 @@ export const TelelaborIcons: React.FC<TelelaborIconsProps> = ({
         </div>
       )}
 
-      {/* Chat Icon */}
-      {isConnected && (
-        <div onClick={onChatToggle} className={`${getIconClasses(isChatActive)}`} style={{ pointerEvents: 'auto' }}>
-          <MessageCircle className="w-5 h-5 text-mist" />
-        </div>
-      )}
-
       {/* Mic Icon */}
       {isConnected && (
         <div onClick={onMicToggle} className={`${getIconClasses(!isMicMuted, isMicMuted)}`} style={{ pointerEvents: 'auto' }}>
           {isMicMuted ? <MicOff className="w-5 h-5 text-mist" /> : <Mic className="w-5 h-5 text-mist" />}
         </div>
-      )}
-
-      {/* Smiley Icon */}
-      {isConnected && (
-        <div onClick={onSmileyToggle} className={`${getIconClasses(isSmileyOn)}`} style={{ pointerEvents: 'auto' }}>
-          {isSmileyOn ? <Smile className="w-4 h-4 sm:w-5 sm:h-5 text-mist" /> : <Frown className="w-4 h-4 sm:w-5 sm:h-5 text-mist" />}
-        </div>
-      )}
-
-      {/* Connect Button - FLAMINGO CTA */}
-      {avatarState === 'off' && showConnectButton && (
-        <Button
-          onClick={onAvatarClick}
-          className="rounded-full bg-flamingo/90 border border-flamingo/70 hover:bg-flamingo text-mist transition-all duration-300 font-bold uppercase text-sm tracking-wide flex items-center gap-2 px-6 py-2"
-          size="default"
-        >
-          START
-          <ArrowRight className="w-4 h-4 text-mist" />
-        </Button>
-      )}
-
-      {/* Disconnect Button - RED CTA */}
-      {avatarState === 'connected' && (
-        <Button
-          onClick={onAvatarClick}
-          className="rounded-full bg-red-500/80 border border-red-500/50 hover:bg-red-600 text-white transition-all duration-300 font-bold uppercase text-sm tracking-wide flex items-center gap-2 px-6 py-2 ml-2"
-          size="default"
-        >
-          STOP
-        </Button>
       )}
 
       {/* Avatar Icon with Loading Ring - EXACT animation from ImageGeneratingState */}
@@ -194,7 +157,7 @@ export const TelelaborIcons: React.FC<TelelaborIconsProps> = ({
         )}
 
         {/* Avatar container */}
-        <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+        <div className="relative w-7 h-7 sm:w-9 sm:h-9">
           {isLoading ? (
             <>
               {/* Spinning gradient border when loading */}

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Rewards Program Policy - Home Butler Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #C5A880; /* Gold/Bronze accent */
+            --onyx: #1A1A1A;
+            --mist: #F5F5F7;
+            --flamingo: #9B5DE5; 
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--onyx);
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 60px auto;
+            padding: 40px;
+            background: white;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--mist);
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--onyx);
+            letter-spacing: -0.02em;
+        }
+
+        .subtitle {
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: var(--onyx);
+            border-left: 4px solid var(--primary);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            color: var(--onyx);
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-cols: 1fr auto;
+            gap: 10px;
+            background: var(--mist);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .value-item {
+            font-size: 0.95rem;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding: 8px 0;
+        }
+
+        .value-label { font-weight: 500; }
+        .value-amount { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); }
+
+        .total-row {
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 2px solid white;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid var(--mist);
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(155, 93, 229, 0.05) 0%, rgba(197, 168, 128, 0.05) 100%);
+            border: 1px solid rgba(197, 168, 128, 0.2);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+        }
+
+        @media print {
+            .container { margin: 0; padding: 20px; max-width: 100%; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="subtitle">Official Document</div>
+        <h1>Loyalty Rewards Program Policy</h1>
+        <p>Home Butler Club — Elevated Home Living</p>
+    </header>
+
+    <section>
+        <h2>Membership Overview</h2>
+        <p><strong>Monthly Membership Package:</strong> $1,000.00</p>
+        
+        <div class="value-grid">
+            <div class="value-item value-label">House Cleaning (4 hours monthly)</div>
+            <div class="value-item value-amount">$2,640.00 /yr</div>
+            
+            <div class="value-item value-label">Car Wash (2/mo)</div>
+            <div class="value-item value-amount">$1,800.00 /yr</div>
+            
+            <div class="value-item value-label">Bulk Pickup (2/yr)</div>
+            <div class="value-item value-amount">$800.00 /yr</div>
+            
+            <div class="value-item value-label">Gutter Cleaning (1/yr)</div>
+            <div class="value-item value-amount">$400.00 /yr</div>
+            
+            <div class="value-item value-label">Window Cleaning (1/yr)</div>
+            <div class="value-item value-amount">$1,500.00 /yr</div>
+            
+            <div class="value-item value-label">Snow Plowing (2/yr)</div>
+            <div class="value-item value-amount">$300.00 /yr</div>
+            
+            <div class="value-item value-label">Christmas Tree Decoration (1/yr)</div>
+            <div class="value-item value-amount">$500.00 /yr</div>
+            
+            <div class="value-item value-label">Deep Cleaning (2/yr x 8 hrs)</div>
+            <div class="value-item value-amount">$1,200.00 /yr</div>
+            
+            <div class="total-row">
+                <span>Total Annual Service Value</span>
+                <span>$9,140.00</span>
+            </div>
+            <div class="total-row" style="color: var(--onyx); border-top: none;">
+                <span>Total Annual Membership Cost</span>
+                <span>$12,000.00</span>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Rewards & Points Accumulation</h2>
+        <h3>1. Base Monthly Rewards</h3>
+        <p>Members automatically earn <strong>12,000 loyalty points</strong> each month after the membership payment is successfully processed.</p>
+        <ul>
+            <li>Monthly Points Value: $25.00</li>
+            <li>Annual Base Rewards: $300.00</li>
+        </ul>
+
+        <h3>2. Service Credit Points</h3>
+        <p>When a scheduled service is not utilized, the dollar value of that service is automatically converted to bonus loyalty points and credited to your account.</p>
+        <div class="highlight-box">
+            <strong>Example:</strong> If you do not schedule or you cancel your monthly house cleaning (valued at $220), you will receive bonus loyalty points equivalent to that full service value (105,600 points).
+        </div>
+    </section>
+
+    <section>
+        <h2>How Service Credits Work</h2>
+        <ul>
+            <li>Services must be scheduled at least <strong>48 hours</strong> in advance to be considered utilized.</li>
+            <li>If a service is not scheduled within the monthly service window, or is cancelled without proper notice, the full service value converts to loyalty points.</li>
+            <li>Bonus points are credited to your account within 5 business days of the missed service window.</li>
+            <li>There is no penalty for unused services—you simply receive the value as loyalty points instead.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Point Conversion & Redemption</h2>
+        <p>Service credits convert at full dollar value to loyalty points.</p>
+        <ul>
+            <li><strong>Conversion Rate:</strong> 480 points equals $1.00</li>
+            <li><strong>Annual Potential:</strong> Members typically accumulate approximately <strong>$600</strong> in loyalty points annually ($300 base + $300 avg. credits).</li>
+            <li><strong>Redemption:</strong> Points can be redeemed for additional services, service upgrades, or special requests not included in your standard membership package.</li>
+            <li><strong>Expiration:</strong> Points do not expire as long as membership remains active.</li>
+            <li><strong>Non-Transferable:</strong> Points are non-transferable and have no cash value.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Cancellation Policy</h2>
+        <ul>
+            <li>Service cancellations must be made at least <strong>48 hours</strong> in advance to receive service credit points.</li>
+            <li>Cancellations made with less than 48 hours notice will not receive service credit points.</li>
+            <li>Emergency cancellations due to weather or facility issues will be rescheduled without penalty.</li>
+            <li>Membership may be cancelled with 30 days written notice. Unused points are forfeited upon membership cancellation.</li>
+        </ul>
+    </section>
+
+    <div class="footer">
+        &copy; 2026 Home Butler Club. All rights reserved. Professionalism. Privacy. Perfection.
+    </div>
+</div>
+
+</body>
+</html>

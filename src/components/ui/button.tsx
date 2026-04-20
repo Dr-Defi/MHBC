@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 
 /**
  * Button Component - 8-COLOR BRAND PALETTE
- * - Flamingo (#F2617A): Primary CTAs (call to action)
- * - Sapphire Blue (#47A1AD): Default/standard buttons
- * - Turmeric Yellow (#CC850A): Secondary/warning buttons
- * - All text: mist gray (white on dark green background)
+ * - Flamingo (#C5A880): Primary CTAs (Gold/Bronze)
+ * - Sapphire (#2B3A42): Default/standard buttons (Slate Navy)
+ * - Turmeric (#D4AF37): Secondary/warning buttons (Metallic Gold)
+ * - All text: mist gray (white on dark background)
  * - Light frost glassmorphism (very lite blur)
  * - Pill-shaped
  */
